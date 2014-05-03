@@ -1,0 +1,3 @@
+CREATE TABLE CLIENTE (
+    nombre VARCHAR(20)
+)
