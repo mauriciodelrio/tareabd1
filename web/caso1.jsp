@@ -29,21 +29,33 @@
                 
                 out.print("\n correcto");
 %>
-        <form action="caso2.jsp" method="post">
-
-            <imput type="submit" value="submit">
-        </form>
+            <form action="caso2.jsp" method="post">
+                <input type="submit" value="ingresar vendedor">
+            </form>
+            <form action="caso3.jsp" method="post">
+                <input type="submit" value="ingresar cliente">
+            </form>
+            <form action="caso4.jsp" method="post">
+                <input type="submit" value="administrar productos">
+            </form>
+            <form action="caso5.jsp" method="post">
+                <input type="submit" value="ingresa compra">
+            </form>
+            <form action="caso6.jsp" method="post">
+                <input type="submit" value="ingresa venta">
+            </form>
+            <form action="caso7.jsp" method="post">
+                <input type="submit" value="ver ventas a cliente">
+            </form>
 
         <%
             }
-        %>
-            else{
-            
+            else
+            {
                 out.print("incorrecto");
             }
-            
-            
-            %>
-        
+                       
+%>
+       
     </body>
 </html>
