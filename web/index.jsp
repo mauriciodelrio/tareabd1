@@ -1,5 +1,6 @@
-<%@page import="cccp.DbConn"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="cccp.DbConn, java.util.* "%>
+<%@page session="true" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +11,11 @@
         <%
             DbConn db = new DbConn();
             db.DbConn();
+            
+            if(request.getParameter("error")!=null){
+            
+                out.print(request.getParameter("error"));
+            }
             
         %>
         <form action="caso1.jsp" method="post">
