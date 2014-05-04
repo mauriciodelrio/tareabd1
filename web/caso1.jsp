@@ -9,6 +9,7 @@
         <%
             String nombre="";
             String passrecibida="";
+            String tipop="";
             ResultSet recepcion;
             String usuario= (String) request.getParameter("usuario");
             String contrasena= (String) request.getParameter("contrasena");
@@ -19,15 +20,16 @@
             db.DbConn();
             
             recepcion=db.Consulta("SELECT * FROM USUARIO WHERE NOMBRE="+"'"+usuario+"'");
+            
             while(recepcion.next()){
             
                 nombre=recepcion.getString("NOMBRE");
                 passrecibida=recepcion.getString("CONTRASEÑA");
+                tipop=recepcion.getString("TIPO");
             }
             
-            if (nombre.equals(usuario) && passrecibida.equals(contrasena)){
+            if (nombre.equals(usuario) && passrecibida.equals(contrasena) && tipop.equals("administrador")){
                 
-                out.print("\n correcto");
 %>
             <form action="caso2.jsp" method="post">
                 <input type="submit" value="ingresar vendedor">
@@ -39,10 +41,10 @@
                 <input type="submit" value="administrar productos">
             </form>
             <form action="caso5.jsp" method="post">
-                <input type="submit" value="ingresa compra">
+                <input type="submit" value="ingresar compra">
             </form>
             <form action="caso6.jsp" method="post">
-                <input type="submit" value="ingresa venta">
+                <input type="submit" value="ingresar venta">
             </form>
             <form action="caso7.jsp" method="post">
                 <input type="submit" value="ver ventas a cliente">
@@ -50,11 +52,37 @@
 
         <%
             }
-            else
+            else if(nombre.equals(usuario) && passrecibida.equals(contrasena) && tipop.equals("vendedor"))
             {
-                out.print("incorrecto");
+                //out.print("incorrecto");
+%>
+            <form action="caso3.jsp" method="post">
+                <input type="submit" value="ingresar cliente">
+            </form>
+            <form action="caso6.jsp" method="post">
+                <input type="submit" value="ingresa venta">
+            </form>
+            <form action="caso7.jsp" method="post">
+                <input type="submit" value="ver ventas a cliente">
+            </form>
+            <form action="caso9.jsp" method="post">
+                <input type="submit" value="ver ventas">
+            </form>
+            
+
+<%
             }
-                       
+            
+            else{
+                
+%>
+
+<h1> error! </h1>
+<form action="index.jsp" method="post">
+    <input type="submit" value="volver a menu">
+</form>        
+        <%
+            }
 %>
        
     </body>

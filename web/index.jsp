@@ -16,7 +16,7 @@
             
             Usuario: <input type="text" name="usuario">
             <br/> 
-            Contraseña: <input type="text" name="contrasena">
+            Contraseña: <input type="password" name="contrasena" >
             <p><input type="submit" value="Entrar"></p>
                    
         </form>

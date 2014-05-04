@@ -56,7 +56,6 @@ public class DbConn {
     
     public ResultSet Consulta(String cons) throws ClassNotFoundException, SQLException{
         
-        String s="";
         Connection connection = null;
         Class.forName("oracle.jdbc.driver.OracleDriver");   
         connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "tarea1",
@@ -66,6 +65,21 @@ public class DbConn {
         ResultSet rs=stmt.executeQuery(cons);
         return rs;
         
+    }
+    
+    public void insertarVendedor(String rut, String contraseña, String nombre) throws ClassNotFoundException, SQLException{
+        
+        Connection connection = null;
+        Class.forName("oracle.jdbc.driver.OracleDriver");   
+        connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "tarea1",
+        "root");
+        PreparedStatement stmt=null;
+        String ins= "INSERT INTO USUARIO(RUT,CONTRASEÑA,NOMBRE,TIPO,COMISION) VALUES(?,?,?,vendedor,0)";
+        stmt= connection.prepareStatement(ins);
+        stmt.setString(1, rut);
+        stmt.setString(2, contraseña);
+        stmt.setString(3, nombre);
+        stmt.executeUpdate();
     }
 
 }
