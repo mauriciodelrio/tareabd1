@@ -46,5 +46,7 @@ usuario = (String)sesionOk.getAttribute("usuario");
         <form action="cerrarsesion.jsp" method="post">
             <input type="submit" value="cerrar sesion">
         </form>
+        <a href="caso1.jsp">volver al menu</a>
+        
     </body>
 </html>

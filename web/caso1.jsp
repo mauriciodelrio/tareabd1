@@ -7,6 +7,7 @@
         <title>recepción</title>
     </head>
     <body>
+        
         <%
             String nombre="";
             String passrecibida="";

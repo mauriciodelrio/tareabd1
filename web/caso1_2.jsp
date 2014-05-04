@@ -38,5 +38,8 @@ usuario = (String)sesionOk.getAttribute("usuario");
         <form action="caso9.jsp" method="post">
             <input type="submit" value="ver ventas">
         </form>
+        <form action="cerrarsesion.jsp" method="post">
+            <input type="submit" value="cerrar sesion">
+        </form>
     </body>
 </html>
