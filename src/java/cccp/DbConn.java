@@ -67,19 +67,37 @@ public class DbConn {
         
     }
     
-    public void insertarVendedor(String rut, String contraseña, String nombre) throws ClassNotFoundException, SQLException{
+    public void insertarVendedor(String rut, String contrasena, String nombre) throws ClassNotFoundException, SQLException{
         
         Connection connection = null;
         Class.forName("oracle.jdbc.driver.OracleDriver");   
         connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "tarea1",
         "root");
         PreparedStatement stmt=null;
-        String ins= "INSERT INTO USUARIO(RUT,CONTRASEÑA,NOMBRE,TIPO,COMISION) VALUES(?,?,?,vendedor,0)";
+        String ins= "INSERT INTO USUARIO(RUT,CONTRASEÑA,NOMBRE,TIPO,COMISION) VALUES(?,?,?,?,?)";
         stmt= connection.prepareStatement(ins);
         stmt.setString(1, rut);
-        stmt.setString(2, contraseña);
+        stmt.setString(2, contrasena);
         stmt.setString(3, nombre);
+        stmt.setString(4, "vendedor");
+        stmt.setString(5, "0");
         stmt.executeUpdate();
     }
+    
+    public void insertarCliente(String rut, String nombre) throws ClassNotFoundException, SQLException{
+        
+        Connection connection = null;
+        Class.forName("oracle.jdbc.driver.OracleDriver");   
+        connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "tarea1",
+        "root");
+        PreparedStatement stmt=null;
+        String ins= "INSERT INTO CLIENTE(RUT,NOMBRE) VALUES(?,?)";
+        stmt= connection.prepareStatement(ins);
+        stmt.setString(1, rut);
+        stmt.setString(2, nombre);
+        stmt.executeUpdate();
+    }
+    
+
 
 }

@@ -20,22 +20,19 @@ usuario = (String)sesionOk.getAttribute("usuario");
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ingreso vendedor</title>
+        <title>Ingresar cliente</title>
     </head>
     <body>
-        <h1>INGRESA TUS DATOS</h1>
-            <form action="verifcaso2.jsp" method="post">
+        <h1>Ingresar cliente</h1>
+        <form action="verifcaso3.jsp" method="post">
             
                 Rut: <input type="text" name="rut" value="sin puntos ni guion">
                 <br/> 
-                Contraseña: <input type="password" name="contrasena">
-                <br/>
-                Repetir Contraseña: <input type="password" name="repetir" >
-                <br/>
+
                 Nombre: <input type="text" name="nombre">
                 <br/>
                 <p><input type="submit" value="Finalizar"></p>
             
-            </form>
+        </form>
     </body>
 </html>
