@@ -17,6 +17,7 @@
         <title>verificación</title>
     </head>
     <body>
+        <a href="caso1.jsp">volver al menu</a>
 
     </body>
 </html>

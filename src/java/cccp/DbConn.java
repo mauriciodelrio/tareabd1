@@ -98,6 +98,21 @@ public class DbConn {
         stmt.executeUpdate();
     }
     
-
-
+        public void insertarProd(String id, String categoria, String cantidad, String nombre, String precio) throws ClassNotFoundException, SQLException{
+        
+        Connection connection = null;
+        Class.forName("oracle.jdbc.driver.OracleDriver");   
+        connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "tarea1",
+        "root");
+        PreparedStatement stmt=null;
+        String ins= "INSERT INTO PRODUCTO(ID_PRODUCTO,STOCK,DESCRIPCION,CATEGORIA,PRECIO) VALUES(?,?,?,?,?)";
+        stmt= connection.prepareStatement(ins);
+        stmt.setString(1, id);
+        stmt.setString(2, cantidad);
+        stmt.setString(3, nombre);
+        stmt.setString(4, categoria);
+        stmt.setString(5, precio);
+        stmt.executeUpdate();
+    }
+    
 }
