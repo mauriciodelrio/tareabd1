@@ -29,7 +29,7 @@
         
         <form action="modifprod.jsp" method="post">
             
-            Buscar Producto [por nombre]: <input type="text" name="usuario">
+            Buscar Producto [por ID]: <input type="text" name="id">
             <br/> 
             <p><input type="submit" value="Editar"></p>                   
         </form>
