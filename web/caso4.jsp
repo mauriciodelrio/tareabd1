@@ -27,9 +27,9 @@
         
         %>
         
-        <form action="modifprod.jsp" method="post">
+        <form action="editarproducto.jsp" method="post">
             
-            Buscar Producto [por ID]: <input type="text" name="id">
+            Buscar Producto [por ID]: <input type="text" name="id_p">
             <br/> 
             <p><input type="submit" value="Editar"></p>                   
         </form>

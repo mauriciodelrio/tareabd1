@@ -28,7 +28,7 @@
  
 %>
 
-    <form method="post" action="editar.jsp">
+    <form method="post" action="edicion.jsp">
             <pre>
                 Codigo:<%
                     String driver = "oracle.jdbc.OracleDriver";
@@ -42,7 +42,7 @@
                     String sql = "select * from producto where id_producto = "+int_id_producto+"";
                     ResultSet datos = stm.executeQuery(sql);
                     datos.next();
-                    int codigo = datos.getInt("codigo");
+                    int codigo = datos.getInt("id_producto");
                     String nombre = datos.getString("nombre");
                     int cantidad = datos.getInt("stock");
                     out.println(codigo);                    

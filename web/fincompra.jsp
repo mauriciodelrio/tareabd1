@@ -42,7 +42,7 @@
             %><script language="JavaScript">
                     alert("Compra realizada exitosamente.");
                     location.href="caso1_1.jsp";
-                                </script>
+              </script>
             %>
     </body>
 </html>
