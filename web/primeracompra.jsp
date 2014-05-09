@@ -12,7 +12,7 @@
     </head>
     <body>
         <% 
-            String id_p = request.getParameter("id_p");
+            String id_p = request.getParameter("id_producto");
             int int_id_p = Integer.parseInt(id_p);
             String fecha = request.getParameter("fecha");
             
@@ -30,7 +30,7 @@
             Statement stm3 = conn.createStatement();
             Statement stm4 = conn.createStatement();
                         
-            String sql = "insert into compra(fecha) values('"+fecha+"')";
+            String sql = "insert into compra(id_compra) values(autoincrementar.nextval)";
             String sql2 = "select * from producto where id_producto="+int_id_p;
             
             stm2.executeQuery(sql);
@@ -43,7 +43,7 @@
             ResultSet max_id_compra = stm4.executeQuery(sql4);
             max_id_compra.next();
             int id_compra = max_id_compra.getInt("max(id_compra)");
-            String sql3 = "insert into detalle_compra(id_compra, id_producto,cantidad,precio) values("+id_compra+","+int_id_p+","+int_cantidad+","+precio_total_detalle+")";
+            String sql3 = "insert into detalle_compra(id_detalle ,id_compra, id_producto,cantidad,precio) values(autoincrementar.nextval,"+id_compra+","+int_id_p+","+int_cantidad+","+precio_total_detalle+")";
             
             stm3.executeQuery(sql3);
             %><script language="JavaScript">

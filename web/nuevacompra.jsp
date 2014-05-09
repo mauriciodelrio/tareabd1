@@ -36,7 +36,7 @@ function validarForm(formulario) {
                     String sql = "select * from producto";
 
                     ResultSet ciclo = stm.executeQuery(sql);
-                    out.println("<select name='id_p'>");
+                    out.println("<select name='id_producto'>");
                     while (ciclo.next()){
                         String nombre = ciclo.getString("nombre");
                         int id = ciclo.getInt("id_producto");
@@ -46,8 +46,8 @@ function validarForm(formulario) {
                     out.println("</select>");
                     
                 %>
-                Fecha: <input type="text" name="fecha">
-                Hora: <input type="text" name="hora">
+                Fecha: <input type="date" name="fecha">
+                Hora: <input type="hour" name="hora">
                 Cantidad: <input type="text" name="cantidad">                           
             </pre>
             <input type="submit" value="Agregar">

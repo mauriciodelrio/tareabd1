@@ -34,7 +34,7 @@ usuario = (String)sesionOk.getAttribute("usuario");
         <form action="caso4.jsp" method="post">
             <input type="submit" value="administrar productos">
         </form>
-        <form action="caso5.jsp" method="post">
+        <form action="nuevacompra.jsp" method="post">
             <input type="submit" value="ingresar compra">
         </form>
         <form action="caso6.jsp" method="post">
