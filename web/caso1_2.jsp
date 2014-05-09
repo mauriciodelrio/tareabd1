@@ -30,10 +30,10 @@ usuario = (String)sesionOk.getAttribute("usuario");
         <form action="caso3.jsp" method="post">
             <input type="submit" value="ingresar cliente">
         </form>
-        <form action="caso6.jsp" method="post">
+        <form action="caso7.jsp" method="post">
             <input type="submit" value="ingresa venta">
         </form>
-        <form action="caso7.jsp" method="post">
+        <form action="caso8.jsp" method="post">
             <input type="submit" value="ver ventas a cliente">
         </form>
         <form action="caso9.jsp" method="post">
@@ -42,5 +42,7 @@ usuario = (String)sesionOk.getAttribute("usuario");
         <form action="cerrarsesion.jsp" method="post">
             <input type="submit" value="cerrar sesion">
         </form>
+        
+        <a href="caso1.jsp">volver al menu</a>
     </body>
 </html>

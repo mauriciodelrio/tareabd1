@@ -23,22 +23,24 @@
             Statement stm3 = conn.createStatement();
             
             String sql = "select MAX(id_compra) from compra";
-            String sql2 = "select sum(precio) from detalle_compra";
-            
             ResultSet max_id_compra = stm.executeQuery(sql);
             max_id_compra.next();
             int id_compra = max_id_compra.getInt("max(id_compra)");
+            int monto_total = 0;
             
-            ResultSet monto = stm2.executeQuery(sql2);
-            monto.next();
-            int monto_total = monto.getInt("sum(precio)");
+            String sql9 = "select * from detalle_compra where id_compra="+id_compra;
+
+            ResultSet ciclo = stm2.executeQuery(sql9);
+            while (ciclo.next()){
+                int precio = ciclo.getInt("precio");
+                monto_total += precio;
+            }
+            
+            
             String sql3 = "update compra set monto_total="+monto_total+" where id_compra = "+id_compra;
             
             stm3.executeQuery(sql3);
-            
-                      
-           
-            stm3.executeQuery(sql3);
+                  
             %><script language="JavaScript">
                     alert("Compra realizada exitosamente.");
                     location.href="caso1_1.jsp";

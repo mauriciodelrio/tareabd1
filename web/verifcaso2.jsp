@@ -10,7 +10,10 @@
             if(!contrasena.equals(repetir)){
                 %>
                 
-                <jsp:forward page="caso2.jsp"/>
+            <script language="JavaScript">
+                    alert("contraseña no coincide.");
+                    location.href="caso1.jsp";
+            </script>
                 <%
             }
             DbConn db = new DbConn();
@@ -23,6 +26,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>verificación</title>
+        
+        <script language="JavaScript">
+                    alert("Datos ingresados con exito.");
+                    location.href="caso1.jsp";
+        </script>
     </head>
     <body>
     </body>
